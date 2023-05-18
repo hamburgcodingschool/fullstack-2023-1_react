@@ -10,7 +10,8 @@
 - **Monday, 15.5.2023:**  
   Try scaffolding multiple React projects with vite and inside of these projects try creating multiple React components.
 - **Wednesday, 17.5.2023:**  
-  Either take your own, existing code from the "travel blog" or alternatively take the code from `homework/lesson02/index.html` and move it into a new React app. Then split it up into sensible components (more than 3). Finally, decide to add some `props` to your components so we can easily change the dynamic parts of the page.
+  - Either take your own, existing code from the "travel blog" or alternatively take the code from [`homework/lesson02/index.html`](homework/lesson02/index.html) and move it into a new React app. Then split it up into sensible components (more than 3). Finally, decide to add some `props` to your components so we can easily change the dynamic parts of the page.
+  - Get comfortable with the [official React documentation](https://react.dev). Please read (or at least skim) the ["Describing the UI"](https://react.dev/learn/describing-the-ui) section up until the "Passing Props to a component" subpage.
 
 
 ## 📄 Docs
