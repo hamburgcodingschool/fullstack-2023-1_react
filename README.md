@@ -1,7 +1,11 @@
-# Fullstack 2023/1 – React module
-## Full Stack Course - 15.5.2023 to 5.6.2023
+# Fullstack 2023/1 – React (15.5.2023 to 5.6.2023)
 
-### ✏️ Homework
+## 🏢 Meta
+- We're moving the classes in week 22
+  - Wednesday, 31.5. -> Tuesday, 30.5.
+  - Friday, 2.6. -> Thursday, 1.6.
+
+## ✏️ Homework
 
 - **Monday, 15.5.2023:**  
   Try scaffolding multiple React projects with vite and inside of these projects try creating multiple React components.
@@ -9,7 +13,7 @@
   Either take your own, existing code from the "travel blog" or alternatively take the code from `homework/lesson02/index.html` and move it into a new React app. Then split it up into sensible components (more than 3). Finally, decide to add some `props` to your components so we can easily change the dynamic parts of the page.
 
 
-### 📄 Docs
+## 📄 Docs
 
 - [Lesson Summary](docs/summary.md)
 
@@ -18,7 +22,7 @@
 - [Outline](docs/outline_react.pdf)
 
 
-### 🤔 Questions?
+## 🤔 Questions?
 
 Use the Slack channel `#fullstack-2023-1`
 
