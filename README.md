@@ -12,6 +12,10 @@
 - **Wednesday, 17.5.2023:**  
   - Either take your own, existing code from the "travel blog" or alternatively take the code from [`homework/lesson02/index.html`](homework/lesson02/index.html) and move it into a new React app. Then split it up into sensible components (more than 3). Finally, decide to add some `props` to your components so we can easily change the dynamic parts of the page.
   - Get comfortable with the [official React documentation](https://react.dev). Please read (or at least skim) the ["Describing the UI"](https://react.dev/learn/describing-the-ui) section up until the "Passing Props to a component" subpage.
+- **Monday, 22.5.2023:**
+  - Keep on extending/completing the last homework: Create components from the given [`template file`](homework/lesson02/index.html) and add sensible Props to all/most of your components.
+  - Implement conditional rendering into your components where it makes sense (please try to use all three types: default values/Logical OR, Logical AND and the ternary operator) 
+  - Read the official React documentation including [`conditional rendering`](https://react.dev/learn/conditional-rendering)
 
 
 ## 📄 Docs
