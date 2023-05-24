@@ -124,6 +124,8 @@ const [counterValue, setCounterValue] = useState(123);
 - If we want to show or edit a state variable in a component that's "below" (in the component tree) the component where the state is kept, then we need to pass it down through props.
 
 ```jsx
+import { useState } from "react";
+
 function TopLevelComponent() {
   const [myCounterValue, setMyCounterValue] = useState(0);
 
