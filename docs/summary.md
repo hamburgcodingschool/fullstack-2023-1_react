@@ -113,4 +113,49 @@ function Greeter({myBooleanCondition, myProperty}) {
     </>
   );
 }
+```
 
+## Lesson 04 (22.05.2023):
+
+- When you want to keep a value inside of a variable and the DOM should automatically be updated when this value changes, we need to use a **state variable** (this principle is called **Reactivity** – which is where React gets its name from)
+- In React, we can access and modify the **state** of a component with the `useState()` **hook function**. `useState()` takes a single parameter, which is the default/starting value of your state variable. It returns two things: the actual state variable (which we can use to access/read the state) and a function to change the state variable (to modify the value).
+```jsx
+const [counterValue, setCounterValue] = useState(123);
+```
+- "Where" you put your state in your React application is very important (and can be tricky): It should be as "low" as possible and as "high" as necessary (in your component tree).
+- If we want to show or edit a state variable in a component that's "below" (in the component tree) the component where the state is kept, then we need to pass it down through props.
+
+```jsx
+function TopLevelComponent() {
+  const [myCounterValue, setMyCounterValue] = useState(0);
+
+  const resetCounter = () => {
+    setMyCounterValue(0);
+  };
+
+  return (
+    <>
+      <SomeChildComponent counter={myCounterValue} />
+      <AnotherChildComponent
+        messageCounter={myCounterValue}
+        onClickReset={resetCounter}
+      />
+    </>
+  );
+}
+
+function SomeChildComponent({ counter }) {
+  return <div>{counter}</div>;
+}
+
+function AnotherChildComponent({ messageCounter, onClickReset }) {
+  return (
+    <ul>
+      <li>Inbox - {messageCounter}</li>
+      <li>
+        <button onClick={onClickReset}>Reset Counter</button>
+      </li>
+    </ul>
+  );
+}
+```
