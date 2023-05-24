@@ -58,6 +58,7 @@ function Greeter(props) {
 // React component with props
 <Greeter name="Maria" location="Berlin" />
 ```
+- When using a default HTML tag inside of React/JSX its attributes might have a different name (e.g. the `class="my-class"` attribute becomes `className="my-class"`)
 - There is a special prop called `children`, which automatically contains everything that's between the opening and closing tag of a React component.
 ```jsx
 function Greeter(props) {
@@ -87,3 +88,29 @@ function Greeter({name, location, children}) {
   );
 }
 ```
+
+## Lesson 03 (22.05.2023):
+
+- Using the object destructuring syntax also allows to set **default values** for each prop individually, when they are not passed in:
+```jsx
+function Greeter({name, location = "Hamburg"}) {
+  return (
+    <h1>Hello, {name} from {location}!</h1>
+  );
+}
+```
+- You can conditionally render some parts of your components by using the **logical OR**, **logical AND** and **ternary operator**:
+```jsx
+function Greeter({myBooleanCondition, myProperty}) {
+  return (
+    <>
+      {/* Logical AND: Render something ONLY when another variable is truthy */}
+      {myBooleanCondition && <h1>Hello</h1>}
+      {/* Logical OR: Render something ONLY when it is truthy OTHERWISE use a fallback value */}
+      {myProperty || "Fallback value"}
+      {/* Ternary Operator: Render A or B, depending on a condition (like if/else) */}
+      {myBooleanCondition ? <h2>If true, this headline will appear</h2>:<p>If false, this paragraph will render</p>}
+    </>
+  );
+}
+
