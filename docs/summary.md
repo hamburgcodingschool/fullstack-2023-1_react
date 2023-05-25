@@ -115,6 +115,19 @@ function Greeter({myBooleanCondition, myProperty}) {
 ```
 
 ## Lesson 04 (24.05.2023):
+- In React components we use the `map()` function to iterate over arrays (typically to create some HTML/JSX for every array item). Just like the other array functions `filter()`, `reduce()` and `forEach()`, the `map()` function takes another function as its parameter. `map()` will call this parameter function for every item in the array and pass each array item as a parameter into this function.
+```jsx
+function FriendList() {
+  const myFriends = ["Max", "Sara", "Lars", "Sabine"];
+
+  return (
+    <ul>
+      {myFriends.map((friend) => <li>{friend}</li>)}
+    </ul>
+  );
+}
+
+``` 
 - When you want to keep a value inside of a variable and the DOM should automatically be updated when this value changes, we need to use a **state variable** (this principle is called **Reactivity** – which is where React gets its name from)
 - In React, we can access and modify the **state** of a component with the `useState()` **hook function**. `useState()` takes a single parameter, which is the default/starting value of your state variable. It returns two things: the actual state variable (which we can use to access/read the state) and a function to change the state variable (to modify the value).
 ```jsx
