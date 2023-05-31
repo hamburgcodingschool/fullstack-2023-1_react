@@ -158,8 +158,7 @@ You can choose any of these optional bonus tasks, in any order.
 ## Submission
 
 1. Upload your code to a new GitHub repository.
-
-  - If you worked in a team, link the GitHub accounts of both of you in the README.md.
+  - If you worked in a team, link the GitHub accounts of both team members in the README.md.
 
 2. Send us an email with the following information:
   - A link to your GitHub repository
