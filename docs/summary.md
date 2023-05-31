@@ -172,3 +172,51 @@ function AnotherChildComponent({ messageCounter, onClickReset }) {
   );
 }
 ```
+
+## Lesson 05 (26.05.2023):
+- Typically, when we use forms or individual inputs, we want to keep their value inside of a state variable. To do this, we need to create **controlled inputs/forms** (meaning that their values are controlled by React). To do this, we need to do **two things**:
+  - Pass our state variable as a `value` to the input
+  - Pass an update function to the `onChange` attribute of our input
+
+```jsx
+import React, { useState } from 'react';
+
+export default function App() {
+  const [username, setUsername] = useState('');
+
+  return (
+    <>
+      <label>
+        Username:
+        <input
+          type="text"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+      </label>
+
+      {username && <h1>Hello, {username}</h1>}
+    </>
+  );
+}
+```
+## Lesson 06 (30.05.2023)
+- To interact with "stuff that doesn't live in React" (we call all of this stuff **Side Effects** like APIs, non-React JS libraries and frameworks, the global `document` or `window` object, timers, etc.), we can use the [`useEffect()` hook](https://reactjs.org/docs/hooks-effect.html).
+- `useEffect()` takes a function (which contains side effects) as its first parameter. The second parameter is an array called `dependencies`, it contains an array of values. Whenever one of these changes, the function in the first parameter will run again.
+```jsx
+function MyComponent() {
+  const [fetchedData, setFetchedData] = useState("");
+
+  useEffect(() => {
+    fetch("https://myApi.com/myEndpoint/234")
+      .then((result) => result.json())
+      .then((data) => {
+        setFetchedData(data);
+      });
+  });
+
+  return <div>{fetchedData}</div>;
+}
+
+```
+- If we pass an empty array to the dependency array of `useEffect(someFunction, [])`, this means that the effect will only run when the component is initially rendered – not when the state inside of this component changes.
