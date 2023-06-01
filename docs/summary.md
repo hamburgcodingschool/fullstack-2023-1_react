@@ -200,6 +200,15 @@ export default function App() {
   );
 }
 ```
+- We should treat React state variables as **immutable**. So if we use arrays or objects inside of state variables, we can't just update(mutate) them, but instead we need to create new objects. This can easily be done with the Spread syntax:
+```js
+const someArray = ["Peter", "Marie", "Inga"];
+
+// Now if we want to push a new element to the end of the array, we can't use .push()
+// Instead we use the spread syntax and add another element at the end/start of the array
+const extendedArray = [...someArray, "Jonas"];
+```
+
 ## Lesson 06 (30.05.2023)
 - To interact with "stuff that doesn't live in React" (we call all of this stuff **Side Effects** like APIs, non-React JS libraries and frameworks, the global `document` or `window` object, timers, etc.), we can use the [`useEffect()` hook](https://reactjs.org/docs/hooks-effect.html).
 - `useEffect()` takes a function (which contains side effects) as its first parameter. The second parameter is an array called `dependencies`, it contains an array of values. Whenever one of these changes, the function in the first parameter will run again.
