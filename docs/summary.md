@@ -228,4 +228,37 @@ function MyComponent() {
 }
 
 ```
-- If we pass an empty array to the dependency array of `useEffect(someFunction, [])`, this means that the effect will only run when the component is initially rendered – not when the state inside of this component changes.
+- If we pass an empty array to the dependency array of `useEffect(someFunction, [])`, this means that the effect will only run when the component is rendered for the first time – not when the state inside of this component changes.
+
+## Lesson 07 (01.06.2023)
+- React apps are **SPA (Single Page Applications)** – this refers to the **single request** they make, to fetch the JS source code from a server. This single code bundle will contain everything they need (including React) to function (obviously there will still be requests to other APIs, your backend, images, fonts, etc. – but the App logic itself is contained within one single bundle of code).
+- Inside of **SPA** we don't want to use regular HTML links (`<a href="xyz"/>`) for navigation – because clicking on this link will always trigger a new request to the server (which is unnecessary, because our App has already been loaded). Using default links will also reset our state, so it will probably break app behavior.
+- Instead of using regular links, we use **client-side navigation** – which means, we will just use browser APIs like the [History API](https://developer.mozilla.org/en-US/docs/Web/API/History_API) that our browser offers, to modify the Location bar and make it "look like we are clicking on links" – even though we're actually just updating the Location bar and conditionally render/hide specific components.
+- To make this easy for us, we can use a **Router**. This is a library that gives us at least two things to implement client-side navigation: A `<Link>` component and a `<Route>` component. The most popular router is [react-router](https://reactrouter.com/en/main) but since version 5 it has become a lot weirder to use. Its old version 4 is sill widely used and it has a very nice API. There is also [wouter](https://github.com/molefrog/wouter), which is very similar to v4 of react-router.
+- A Link component behaves mostly like the `<a>` HTML tag, but clicking on it, will not trigger a new request from the browser.
+- A Route component is basically a big `if ()` condition, that is true, when the current URL in the browser matches a given `path`.
+```jsx
+import { Link, Route } from "wouter";
+
+function App() {
+  return (
+    <div>
+      <Link href="/users/1">Profile</Link>
+
+      <Route path="/about">About Us</Route>
+      <Route path="/users/:name">
+        {(params) => <div>Hello, {params.name}!</div>}
+      </Route>
+      <Route path="/inbox" component={InboxPage} />
+    </div>
+  );
+}
+
+```
+- Routers will always offer a way to define dynamic route parameters, which you can use to match a whole bunch paths – not just a single one.
+
+```jsx
+<Route path="/users/:name">
+  {(params) => <div>Hello, {params.name}!</div>}
+</Route>
+```
