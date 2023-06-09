@@ -262,3 +262,35 @@ function App() {
   {(params) => <div>Hello, {params.name}!</div>}
 </Route>
 ```
+
+## Lesson 08 (05.06.2023)
+- When React applications grow bigger, the amount of prop drilling (passing props down through many levels of components) can become very annoying. Therefore we can use a **global state**, which can be accessed from any component (typically a global state container is called **store**). There are many solutions/frameworks for this.
+- React offers an inbuilt solution for this purpose: the Context API (in the shape of the `useContext()` hook). With this we can set up global providers which can hold our state. However `useContext()` should not be used for big applications, as it has some performance problems.
+- Probably the most popular solution for big applications is the (Redux framework)[https://redux.js.org/]. It is a very powerful global state management solution. It is an implementation of an abstract concept called the Flux pattern.
+- For small to medium sized apps, there is a very minimal and yet effective global state management solution named (Zustand)[https://github.com/pmndrs/zustand]. It has a very minimal API and is therefore very beginner friendly (compared to Redux). A simple store can be created in a separate file like this:
+```jsx
+import { create } from 'zustand'
+
+const useMyStore = create((set) => ({
+  counter: 0,
+  increaseCounter: () => set((state) => ({ counter: state.counter + 1 })),
+  decreaseCounter: () => set((state) => ({ counter: state.counter - 1 })),
+  resetCounter: () => set({ counter: 0 }),
+}))
+```
+- Now inside of ANY component, you can use this store like this:
+```jsx
+function MyCounter() {
+  const counter = useMyStore((state) => state.counter);
+  const increaseCounter = useMyStore((state) => state.increaseCounter);
+  const decreaseCounter = useMyStore((state) => state.decreaseCounter);
+
+  return (
+    <>
+      <h1>{counter}</h1>
+      <button onClick={increaseCounter}>Increase</button>
+      <button onClick={decreaseCounter}>Decrease</button>
+    </>
+  )
+}
+```
