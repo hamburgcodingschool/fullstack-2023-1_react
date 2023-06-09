@@ -255,7 +255,7 @@ function App() {
 }
 
 ```
-- Routers will always offer a way to define dynamic route parameters, which you can use to match a whole bunch paths – not just a single one.
+- Routers will always offer a way to define dynamic route parameters, which you can use to match a whole bunch of paths – not just a single one.
 
 ```jsx
 <Route path="/users/:name">
@@ -294,3 +294,6 @@ function MyCounter() {
   )
 }
 ```
+- The process of making your React application available to the rest of the world through a public URL is called **deployment**. In general, deploying a React application is pretty simple, because it is a Frontend application, that runs in the browser of the users. Therefore the webserver can be very "stupid" – it only needs to be able to serve our static files. This is why React applications can often be hosted on very cheap/free infrastructure without any special requirements.
+- You can always deploy your app manually – meaning you can just copy your bundled app (inside of the `dist` folder) to any server that can serve static files (e.g. via FTP or via a web interface from your hosting provider). But since this is very tedious – typically you want to have an automated deployment process, which will always deploy the newest version of our app (e.g. when we commit any changes to out `main` branch)
+- A simple and free solution for hosting and automated deployment are services like **(Netlify)[https://www.netlify.com/]** or **(Vercel)[https://vercel.com/]**. You can just signup to their service, pick one your GitHub repositories and it will automatically install a automated deployment process and your app will be available under one of their free (yet not very pretty) domains.
