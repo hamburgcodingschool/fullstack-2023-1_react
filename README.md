@@ -22,6 +22,8 @@
 
 - [Lesson Summary](docs/summary.md)
 
+- [Final project description and requirements](project.md)
+
 - [Handout](docs/handout_react.pdf)
 
 - [Outline](docs/outline_react.pdf)
